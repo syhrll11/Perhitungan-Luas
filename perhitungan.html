@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #30446e, #945848, #b156b8, #9a3b46);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <h1 class="text-center mb-4">Hitung Luas</h1>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2>Luas Persegi Panjang</h2> 
+                        <div class="mb-3">
+                            <label for="panjang" class="form-label">Panjang:</label>
+                            <input type="number" class="form-control" id="panjang" value="10">
+                        </div>
+                        <div class="mb-3">
+                            <label for="lebar" class="form-label">Lebar:</label>
+                            <input type="number" class="form-control" id="lebar" value="5">
+                        </div>
+                        <button class="btn btn-primary" onclick="hitungLuasPersegiPanjang()">Hitung</button>
+                        <p class="mt-2">Luas: <span id="luasPersegiPanjang"></span></p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2>Luas Bujur Sangkar</h2>
+                        <div class="mb-3">
+                            <label for="sisi" class="form-label">Sisi:</label>
+                            <input type="number" class="form-control" id="sisi" value="4">
+                        </div>
+                        <button class="btn btn-primary" onclick="hitungLuasBujurSangkar()">Hitung</button>
+                        <p class="mt-2">Luas: <span id="luasBujurSangkar"></span></p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2>Luas Segitiga</h2>
+                        <div class="mb-3">
+                            <label for="alas" class="form-label">Panjang Alas:</label>
+                            <input type="number" class="form-control" id="alas" value="6">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tinggi" class="form-label">Tinggi:</label>
+                            <input type="number" class="form-control" id="tinggi" value="8">
+                        </div>
+                        <button class="btn btn-primary" onclick="hitungLuasSegitiga()">Hitung</button>
+                        <p class="mt-2">Luas: <span id="luasSegitiga"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk menghitung luas persegi panjang
+        function hitungLuasPersegiPanjang() {
+            // Mengambil nilai panjang dan lebar dari input
+            const panjang = parseFloat(document.getElementById('panjang').value);
+            const lebar = parseFloat(document.getElementById('lebar').value);
+            
+            // Menghitung luas dengan rumus panjang * lebar
+            const luas = panjang * lebar;
+            
+            // Menampilkan hasil luas di elemen HTML
+            document.getElementById('luasPersegiPanjang').innerText = luas;
+        }
+
+        // Fungsi untuk menghitung luas bujur sangkar
+        function hitungLuasBujurSangkar() {
+            // Mengambil nilai sisi dari input
+            const sisi = parseFloat(document.getElementById('sisi').value);
+            
+            // Menghitung luas dengan rumus sisi * sisi
+            const luas = sisi * sisi;
+            
+            // Menampilkan hasil luas di elemen HTML
+            document.getElementById('luasBujurSangkar').innerText = luas;
+        }
+
+        // Fungsi untuk menghitung luas segitiga
+        function hitungLuasSegitiga() {
+            // Mengambil nilai alas dan tinggi dari input
+            const alas = parseFloat(document.getElementById('alas').value);
+            const tinggi = parseFloat(document.getElementById('tinggi').value);
+            
+            // Menghitung luas dengan rumus (alas * tinggi) / 2
+            const luas = (alas * tinggi) / 2;
+            
+            // Menampilkan hasil luas di elemen HTML
+            document.getElementById('luasSegitiga').innerText = luas;
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
